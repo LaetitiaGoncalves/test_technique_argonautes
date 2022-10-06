@@ -10,9 +10,12 @@ const Home = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/argonaute", {
-        name: name,
-      });
+      const response = await axios.post(
+        "https://laetitia-test-wild.herokuapp.com/argonaute",
+        {
+          name: name,
+        }
+      );
       setName("");
       console.log(response.data);
     } catch (error) {
@@ -27,7 +30,7 @@ const Home = () => {
   useEffect(() => {
     const fetchArgonaute = async () => {
       const response = await axios.get(
-        `http://localhost:3000/allTheArgonautes`
+        "https://laetitia-test-wild.herokuapp.com/allTheArgonautes"
       );
       setData(response.data);
       console.log(response.data);
